@@ -1,15 +1,9 @@
-/* ==========================================
-  Стилі для секції "Винаходи"
-  ==========================================
-*/
-
 .inventions {
-    background-color: #ffffff; /* Чистий білий фон */
+    background-color: #ffffff;
     padding: 4rem 0;
     border-top: 1px solid #eee;
 }
 
-/* Використовуємо той самий стиль заголовка, що і в bio-style.css. */
 .inventions .section-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -29,56 +23,51 @@
     margin: 0 auto;
 }
 
-/* --- Сітка карток --- */
 .inventions-grid {
     display: grid;
-    /* 3 колонки на десктопі, 2 на планшеті, 1 на мобільному */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem; /* Відстань між картками */
+    gap: 2rem;
 }
 
-/* --- Стиль картки --- */
 .invention-card {
-    display: block; /* Щоб посилання займало всю картку */
+    display: block;
     text-decoration: none;
-    color: inherit; /* Успадковуємо колір тексту */
+    color: inherit;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.07);
     border: 1px solid #f0f0f0;
-    overflow: hidden; /* Обрізаємо все, що виходить за межі */
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .invention-card:hover {
-    transform: translateY(-8px); /* Ефект "підняття" */
+    transform: translateY(-8px);
     box-shadow: 0 12px 25px rgba(0,0,0,0.1);
 }
 
-/* Обгортка для зображення та року */
 .card-image-wrapper {
     position: relative;
-    height: 200px; /* Фіксована висота зображення */
+    height: 200px;
     overflow: hidden;
 }
 
 .card-image-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Зображення заповнює простір */
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
 .invention-card:hover .card-image-wrapper img {
-    transform: scale(1.05); /* Збільшуємо зображення при наведенні */
+    transform: scale(1.05);
 }
 
-/* Рік на картці */
 .card-year {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background-color: rgba(0,0,0,0.5); /* Напівпрозорий фон */
+    background-color: rgba(0,0,0,0.5);
     color: #ffffff;
     padding: 5px 10px;
     border-radius: 6px;
@@ -86,12 +75,10 @@
     font-weight: 600;
 }
 
-/* Контент картки (текст) */
 .card-content {
     padding: 1.5rem;
 }
 
-/* Теги */
 .card-tags {
     display: flex;
     gap: 0.5rem;
@@ -105,7 +92,6 @@
     color: #555;
 }
 
-/* Значки (теги) */
 .tag-badge {
     display: inline-block;
     padding: 4px 12px;
@@ -116,7 +102,6 @@
     background-color: #f0f0f0;
 }
 
-/* Різні кольори для значків (як на вашому зразку) */
 .tag-badge.badge-historic {
     background-color: #fcf1e0;
     color: #a47e4b;
@@ -138,7 +123,7 @@
     border: 1px solid #c4e8d3;
 }
 .tag-badge.badge-legendary {
-    background-color: #fcf1e0; /* той самий, що й historic */
+    background-color: #fcf1e0;
     color: #a47e4b;
     border: 1px solid #ecdac4;
 }
@@ -148,8 +133,6 @@
     border: 1px solid #e0c4e8;
 }
 
-
-/* Заголовок та опис картки */
 .card-content h3 {
     font-size: 1.25rem;
     font-weight: 700;

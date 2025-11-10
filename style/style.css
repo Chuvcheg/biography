@@ -1,75 +1,62 @@
-/* --- Загальні налаштування та скидання стилів --- */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Враховуємо padding та border в ширині/висоті */
+    box-sizing: border-box;
 }
 
 html, body {
-    height: 100%; /* Обов'язково для "прибитого" футера */
+    height: 100%;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
-    scroll-behavior: smooth; /* Плавна прокрутка по якорях */
+    scroll-behavior: smooth;
 }
 
-/* Використовуємо Flexbox для <body>, 
-  щоб "прибити" футер до низу.
-*/
 body {
     display: flex;
-    flex-direction: column; /* Елементи йдуть один під одним */
-    min-height: 100vh; /* Мінімальна висота = 100% екрану */
+    flex-direction: column;
+    min-height: 100vh;
     background-color: #ffffff;
 }
 
-/* Обмежуємо ширину контенту і центруємо його.
-  Ми будемо використовувати цей клас в header, main та footer.
-*/
 .container {
     width: 90%;
     max-width: 1140px;
     margin: 0 auto;
 }
 
-/* ==========================================
-  1. Налаштування Хедера (Закріплений)
-  ==========================================
-*/
 header {
-    position: sticky; /* "Прилипає" до верху, коли ми прокручуємо */
+    position: sticky;
     top: 0;
     width: 100%;
-    background-color: #2a4268; /* Темно-синій фон */
+    background-color: #2a4268;
     padding: 1rem 0;
-    z-index: 1000; /* Має бути поверх іншого контенту */
+    z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Розташовуємо елементи хедера (лого і навігацію) по боках */
 header .container {
     display: flex;
-    justify-content: space-between; /* Лого зліва, навігація справа */
-    align-items: center; /* Вирівнюємо по центру вертикально */
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* --- Стилі для Логотипу --- */
 .logo-area {
     display: flex;
     align-items: center;
-    color: #ffffff; /* Білий текст для імені */
+    color: #ffffff;
 }
 
 .logo-icon {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #a47e4b; /* Золотисто-коричневий фон іконки */
+    background-color: #a47e4b;
     color: #ffffff;
     display: grid;
     place-items: center;
     font-size: 1.2rem;
     font-weight: 600;
-    margin-right: 15px; /* Відступ від тексту */
+    margin-right: 15px;
 }
 
 .logo-text .name {
@@ -79,22 +66,21 @@ header .container {
 
 .logo-text .subtitle {
     font-size: 0.9rem;
-    color: #d1c9bd; /* Світлий золотисто-сірий для підзаголовку */
+    color: #d1c9bd;
 }
 
 
-/* --- Стилі для Навігації --- */
 .main-nav ul {
     display: flex;
-    list-style: none; /* Прибираємо маркери списку */
+    list-style: none;
 }
 
 .main-nav li {
-    margin-left: 30px; /* Відстань між пунктами меню */
+    margin-left: 30px;
 }
 
 .main-nav a {
-    color: #d1c9bd; /* Той самий колір, що і в підзаголовку */
+    color: #d1c9bd;
     text-decoration: none;
     font-size: 1rem;
     display: flex;
@@ -103,72 +89,50 @@ header .container {
 }
 
 .main-nav a:hover {
-    color: #ffffff; /* Робимо яскравішим при наведенні */
+    color: #ffffff;
 }
 
-/* Стиль для іконок в меню */
 .main-nav a span {
     margin-right: 8px;
-    font-size: 1.1rem; /* Робимо іконку трохи більшою */
+    font-size: 1.1rem;
 }
 
 
-/* ==========================================
-  2. Налаштування Основного вмісту (Main)
-  ==========================================
-*/
 main {
-    /* * КЛЮЧОВИЙ ЕЛЕМЕНТ для "прибитого" футера:
-     * 'flex-grow: 1' змушує <main> зайняти ВЕСЬ 
-     * вільний простір між <header> та <footer>.
-    */
+	
     flex-grow: 1;
-    
-    /* Прибираємо загальні padding-и, щоб секції 
-      на кшталт .scientist-hero могли займати всю ширину.
-      Ми будемо додавати padding-и всередині кожної секції.
-    */
     padding-top: 0;
     padding-bottom: 0;
 }
 
 
-/* ==========================================
-  3. Налаштування Футера (Прибитий до низу)
-  ==========================================
-*/
 footer {
-    background-color: #2a4268; /* Темно-синій, як у хедера */
-    color: #d1c9bd; /* Світлий золотисто-сірий */
+    background-color: #2a4268;
+    color: #d1c9bd;
     padding: 4rem 0 2rem 0;
     font-size: 0.95rem;
 }
 
-/* Контейнер для 4 колонок */
 .footer-content {
     display: grid;
-    /* Адаптивна сітка: 4 колонки на десктопі, 2 на планшеті, 1 на мобільному */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
 }
 
-/* Загальний стиль для колонки */
 .footer-column h4 {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #ffffff; /* Білий заголовок */
+    color: #ffffff;
     margin-bottom: 1.5rem;
     position: relative;
 }
 
-/* --- 1. Колонка "Про сайт" --- */
 .footer-about .footer-description {
     line-height: 1.6;
     max-width: 300px;
 }
 
-/* Логотип у футері (схожий на хедер) */
 .logo-area-footer {
     display: flex;
     align-items: center;
@@ -179,7 +143,7 @@ footer {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: #a47e4b; /* Золотистий */
+    background-color: #a47e4b;
     color: #ffffff;
     display: grid;
     place-items: center;
@@ -201,9 +165,8 @@ footer {
 }
 
 
-/* --- 2 & 3. Колонки посилань --- */
 .footer-links ul {
-    list-style: none; /* Прибираємо маркери */
+    list-style: none;
 }
 
 .footer-links li {
@@ -211,17 +174,16 @@ footer {
 }
 
 .footer-links a {
-    color: #d1c9bd; /* Світлий колір */
+    color: #d1c9bd;
     text-decoration: none;
     transition: color 0.3s ease, padding-left 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #ffffff; /* Білий при наведенні */
-    padding-left: 5px; /* Легкий зсув */
+    color: #ffffff;
+    padding-left: 5px;
 }
 
-/* --- 4. Колонка контактів --- */
 .footer-contact .contact-item {
     display: flex;
     align-items: center;
@@ -231,7 +193,7 @@ footer {
 .footer-contact .contact-item span {
     font-size: 1.2rem;
     margin-right: 10px;
-    color: #a47e4b; /* Золотиста іконка */
+    color: #a47e4b;
 }
 
 .footer-contact .contact-item a {
@@ -253,7 +215,7 @@ footer {
     place-items: center;
     width: 40px;
     height: 40px;
-    background-color: rgba(255,255,255, 0.05); /* Ледь помітний фон */
+    background-color: rgba(255,255,255, 0.05);
     border: 1px solid rgba(255,255,255, 0.1);
     color: #d1c9bd;
     border-radius: 50%;
@@ -269,65 +231,57 @@ footer {
 }
 
 
-/* --- Нижня частина футера (копірайт) --- */
 .footer-bottom {
-    border-top: 1px solid rgba(255,255,255, 0.1); /* Тонка лінія */
+    border-top: 1px solid rgba(255,255,255, 0.1);
     padding-top: 2rem;
     display: flex;
-    justify-content: space-between; /* Розносимо по боках */
+    justify-content: space-between;
     align-items: center;
     font-size: 0.85rem;
-    color: #aaa; /* Трохи темніший колір */
+    color: #aaa;
 }
 
-/* Адаптація для мобільних */
 @media (max-width: 768px) {
     .footer-content {
-        /* Вже налаштовано через grid-template-columns: repeat(auto-fit...) */
     }
     
     .footer-bottom {
-        flex-direction: column; /* Один під одним */
+        flex-direction: column;
         gap: 0.5rem;
         text-align: center;
     }
 }
 
 
-/* ==========================================
-  4. Секція Scientist Hero (Hero)
-  ==========================================
-*/
 .scientist-hero {
-    background-color: #2a4268; /* Темно-синій фон, як у хедера */
+    background-color: #2a4268;
     color: #ffffff;
     padding: 4rem 0;
-    overflow: hidden; /* Щоб зображення не виходило за межі */
-    position: relative; /* Для позиціонування абсолютних елементів */
+    overflow: hidden;
+    position: relative;
 }
 
 .scientist-hero .container {
     display: flex;
     align-items: center;
-    gap: 40px; /* Відстань між зображенням та інформацією */
+    gap: 40px;
     position: relative;
-    z-index: 1; /* Щоб контент був поверх будь-яких фонових елементів */
+    z-index: 1;
 }
 
 .hero-content {
     display: flex;
     align-items: center;
     width: 100%;
-    position: relative; /* Для позиціонування inventions-count */
+    position: relative;
 }
 
-/* Обгортка для зображення та лічильника */
 .hero-image-wrapper {
-    flex-shrink: 0; /* Зображення не буде стискатися */
+    flex-shrink: 0;
     position: relative;
-    width: 400px; /* Фіксована ширина, як на зразку */
-    height: 500px; /* Фіксована висота */
-    background: linear-gradient(135deg, #4b6690, #2a4268); /* Градієнт як підкладка */
+    width: 400px;
+    height: 500px;
+    background: linear-gradient(135deg, #4b6690, #2a4268);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
@@ -336,10 +290,10 @@ footer {
 .hero-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Зображення заповнить контейнер */
-    object-position: center bottom; /* Зображення опускається до низу */
+    object-fit: cover;
+    object-position: center bottom;
     display: block;
-    mix-blend-mode: luminosity; /* Змішуємо, щоб зображення було чорно-білим і вписувалося в фон */
+    mix-blend-mode: luminosity;
     opacity: 0.9;
 }
 
@@ -347,7 +301,7 @@ footer {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    background-color: #a47e4b; /* Золотисто-коричневий, як іконка в хедері */
+    background-color: #a47e4b;
     color: #ffffff;
     padding: 10px 20px;
     border-radius: 8px;
@@ -355,7 +309,7 @@ footer {
     flex-direction: column;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 2; /* Поверх зображення */
+    z-index: 2;
 }
 
 .inventions-count .count-number {
@@ -372,16 +326,15 @@ footer {
 }
 
 
-/* --- Стилі для інформаційного блоку --- */
 .hero-info {
-    flex-grow: 1; /* Займає весь доступний простір */
-    padding-left: 40px; /* Відступ від зображення */
+    flex-grow: 1;
+    padding-left: 40px;
 }
 
 .hero-info .badge {
     display: inline-block;
-    background-color: rgba(255,255,255,0.1); /* Напівпрозорий білий фон */
-    color: #d1c9bd; /* Світлий золотисто-сірий */
+    background-color: rgba(255,255,255,0.1);
+    color: #d1c9bd;
     padding: 6px 15px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -413,14 +366,14 @@ footer {
 
 .hero-info .details p span {
     margin-right: 10px;
-    color: #a47e4b; /* Золотистий колір для іконок */
+    color: #a47e4b;
     font-size: 1.2rem;
 }
 
 .hero-actions {
     margin-top: 40px;
     display: flex;
-    gap: 15px; /* Відстань між кнопками */
+    gap: 15px;
 }
 
 .button {
@@ -436,24 +389,24 @@ footer {
 }
 
 .button.primary {
-    background-color: #a47e4b; /* Золотисто-коричневий */
+    background-color: #a47e4b;
     color: #ffffff;
     box-shadow: 0 4px 10px rgba(164, 126, 75, 0.4);
 }
 
 .button.primary:hover {
-    background-color: #c09e6c; /* Трохи світліший при наведенні */
+    background-color: #c09e6c;
     box-shadow: 0 6px 15px rgba(164, 126, 75, 0.6);
 }
 
 .button.secondary {
     background-color: transparent;
-    color: #d1c9bd; /* Світлий золотисто-сірий */
+    color: #d1c9bd;
     border: 1px solid #d1c9bd;
 }
 
 .button.secondary:hover {
-    background-color: rgba(209, 201, 189, 0.1); /* Ледь помітний фон */
+    background-color: rgba(209, 201, 189, 0.1);
     color: #ffffff;
     border-color: #ffffff;
 }

@@ -1,15 +1,9 @@
-/* ==========================================
-  Стилі для секції "Публікації"
-  ==========================================
-*/
-
 .publications {
-    background-color: #fcfaf8; /* Той самий світлий фон, що і в біографії */
+    background-color: #fcfaf8;
     padding: 4rem 0;
     border-top: 1px solid #eee;
 }
 
-/* Використовуємо той самий стиль заголовка, що і в bio-style.css. */
 .publications .section-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -29,19 +23,16 @@
     margin: 0 auto;
 }
 
-/* --- Блок з аудіо та статистикою --- */
 .pubs-summary {
     display: grid;
-    /* На великих екранах: 2 колонки (аудіо і 3 картки) */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    align-items: stretch; /* Картки однакової висоти */
+    align-items: stretch;
     margin-bottom: 4rem;
 }
 
-/* --- Картка аудіоплеєра --- */
 .audio-player-card {
-    background-color: #f1ede9; /* Світло-бежевий фон */
+    background-color: #f1ede9;
     border-radius: 12px;
     padding: 1.5rem 2rem;
     display: flex;
@@ -53,7 +44,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #a47e4b; /* Золотистий */
+    background-color: #a47e4b;
     color: #fff;
     display: grid;
     place-items: center;
@@ -73,10 +64,9 @@
     margin-bottom: 1rem;
 }
 
-/* Стилізація стандартного аудіоплеєра */
 .custom-audio-player {
     width: 100%;
-    margin-top: auto; /* Притискає плеєр до низу картки */
+    margin-top: auto;
     padding-top: 1rem;
 }
 
@@ -87,10 +77,8 @@
     margin-top: 0.75rem;
 }
 
-/* --- Контейнер для карток статистики --- */
 .stats-container {
     display: grid;
-    /* 3 колонки */
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
@@ -112,7 +100,7 @@
 
 .stat-icon {
     font-size: 2.5rem;
-    color: #a47e4b; /* Золотистий */
+    color: #a47e4b;
     display: block;
     margin-bottom: 0.75rem;
 }
@@ -130,10 +118,8 @@
     margin-top: 0.25rem;
 }
 
-
-/* --- Таблиця публікацій --- */
 .publications-table-wrapper {
-    overflow-x: auto; /* Дозволяє таблиці прокручуватися горизонтально на мобільних */
+    overflow-x: auto;
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.07);
@@ -142,8 +128,8 @@
 
 .publications-table {
     width: 100%;
-    border-collapse: collapse; /* Прибирає подвійні рамки */
-    min-width: 900px; /* Мінімальна ширина, щоб контент не стискався */
+    border-collapse: collapse;
+    min-width: 900px;
 }
 
 .publications-table th,
@@ -153,9 +139,8 @@
     border-bottom: 1px solid #f0f0f0;
 }
 
-/* Заголовок таблиці */
 .publications-table thead {
-    background-color: #2a4268; /* Темно-синій, як у хедера */
+    background-color: #2a4268;
     color: #ffffff;
 }
 
@@ -166,16 +151,14 @@
     letter-spacing: 0.5px;
 }
 
-/* Рядки таблиці */
 .publications-table tbody tr:last-child td {
-    border-bottom: none; /* Прибираємо рамку в останнього рядка */
+    border-bottom: none;
 }
 
 .publications-table tbody tr:hover {
-    background-color: #fcfaf8; /* Світлий фон при наведенні */
+    background-color: #fcfaf8;
 }
 
-/* Стилі для контенту в комірках */
 .publications-table td[data-label="Назва"] strong {
     font-size: 1.1rem;
     font-weight: 600;
@@ -190,7 +173,6 @@
     line-height: 1.4;
 }
 
-/* Теги (Тип) */
 .tag {
     display: inline-block;
     background-color: #f0f0f0;
@@ -200,10 +182,9 @@
     border-radius: 15px;
     font-size: 0.85rem;
     font-weight: 500;
-    white-space: nowrap; /* Щоб текст не переносився */
+    white-space: nowrap;
 }
 
-/* Значки (Значущість) */
 .badge {
     display: inline-block;
     padding: 5px 12px;
@@ -215,38 +196,32 @@
 }
 
 .badge.badge-high {
-    background-color: #a47e4b; /* Золотистий (Висока) */
+    background-color: #a47e4b;
 }
 .badge.badge-critical {
-    background-color: #3f5d8a; /* Темніший синій (Дуже висока) */
+    background-color: #3f5d8a;
 }
 .badge.badge-medium {
-    background-color: #8a8a8a; /* Сірий (Середня) */
+    background-color: #8a8a8a;
 }
 
-/* --- Адаптивність для статистики та таблиці --- */
-
-/* Для планшетів (до 992px) */
 @media (max-width: 992px) {
     .pubs-summary {
-        grid-template-columns: 1fr; /* Аудіо і статистика один під одним */
+        grid-template-columns: 1fr;
     }
     
     .stats-container {
-        /* Залишаємо 3 колонки, якщо поміщаються, або 1 */
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
 }
 
-/* Для мобільних (до 768px) */
 @media (max-width: 768px) {
     .stats-container {
-        grid-template-columns: 1fr; /* 1 колонка для статистики */
+        grid-template-columns: 1fr;
     }
 
-    /* Адаптивна таблиця: перетворюємо на картки */
     .publications-table thead {
-        display: none; /* Ховаємо заголовок */
+        display: none;
     }
     
     .publications-table tr {
@@ -259,8 +234,8 @@
     
     .publications-table td {
         display: block;
-        text-align: right; /* Вирівнюємо значення по правому краю */
-        padding-left: 50%; /* Залишаємо місце для data-label */
+        text-align: right;
+        padding-left: 50%;
         position: relative;
         border-bottom: 1px solid #f5f5f5;
     }
@@ -269,9 +244,8 @@
         border-bottom: none;
     }
     
-    /* Створюємо "заголовки" за допомогою псевдо-елементів */
     .publications-table td::before {
-        content: attr(data-label); /* Беремо текст з data-label */
+        content: attr(data-label);
         position: absolute;
         left: 1rem;
         width: 45%;
@@ -280,18 +254,17 @@
         color: #333;
     }
 
-    /* Вирівнюємо теги і значки */
     .publications-table td[data-label="Тип"],
     .publications-table td[data-label="Значущість"] {
         text-align: right;
     }
     
     .publications-table td[data-label="Назва"] {
-        text-align: left; /* Назва - єдиний виняток */
+        text-align: left;
         padding-left: 1.25rem;
     }
     
     .publications-table td[data-label="Назва"]::before {
-        display: none; /* Не показуємо data-label для назви */
+        display: none;
     }
 }

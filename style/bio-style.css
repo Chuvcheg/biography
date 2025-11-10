@@ -1,15 +1,9 @@
-/* ==========================================
-  Стилі для секції "Біографія"
-  ==========================================
-*/
-
 .biography {
-    background-color: #fcfaf8; /* Дуже світлий, теплий фон */
+    background-color: #fcfaf8;
     padding: 4rem 0;
     border-top: 1px solid #eee;
 }
 
-/* Загальний заголовок для секцій (Біографія, Хронологія) */
 .section-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -37,10 +31,9 @@
 }
 
 
-/* --- 1. Стилі для текстової частини біографії --- */
 .bio-text-content {
-    max-width: 800px; /* Обмежуємо ширину тексту для читабельності */
-    margin: 0 auto 4rem auto; /* Центруємо і додаємо відступ знизу */
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
     background-color: #ffffff;
     padding: 2.5rem;
     border-radius: 12px;
@@ -50,7 +43,7 @@
 .bio-text-content article h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #a47e4b; /* Золотистий акцент */
+    color: #a47e4b;
     margin-top: 2rem;
     margin-bottom: 0.75rem;
 }
@@ -68,9 +61,8 @@
 }
 
 
-/* --- 2. Стилі для блоку з відео --- */
 .video-section {
-    max-width: 900px; /* Обмежуємо ширину відео-блоку */
+    max-width: 900px;
     margin: 0 auto 4rem auto;
     text-align: center;
 }
@@ -84,12 +76,12 @@
 
 .video-wrapper {
     position: relative;
-    padding-bottom: 56.25%; /* Співвідношення сторін 16:9 (9 / 16 * 100) */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    background-color: #000; /* Чорний фон на випадок затримки завантаження */
+    background-color: #000;
 }
 
 .video-wrapper iframe {
@@ -108,7 +100,6 @@
 }
 
 
-/* --- 3. Стилі для Хронології (Таймлайн) --- */
 .timeline-section {
     max-width: 900px;
     margin: 0 auto;
@@ -117,12 +108,12 @@
 .timeline {
     display: flex;
     flex-direction: column;
-    gap: 1rem; /* Відстань між картками */
+    gap: 1rem;
 }
 
 .timeline-item {
     display: flex;
-    align-items: flex-start; /* Вирівнюємо по верху */
+    align-items: flex-start;
     background-color: #ffffff;
     padding: 1.5rem 2rem;
     border-radius: 12px;
@@ -139,9 +130,9 @@
 .timeline-year {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #a47e4b; /* Золотистий колір */
-    width: 120px; /* Фіксована ширина для року */
-    flex-shrink: 0; /* Не стискати */
+    color: #a47e4b;
+    width: 120px;
+    flex-shrink: 0;
     margin-right: 1.5rem;
 }
 
